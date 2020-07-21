@@ -1,0 +1,17 @@
+# Nuvem de palavras 
+# Dados do Google Trends
+# Busca da população brasileira por livros e literatura no Google
+# Autora: Jeanne Franco
+
+install.packages("wordcloud")
+library(wordcloud)
+
+word_c_liv = read.table(file.choose(), header = T)
+word_c_liv
+
+warnings()
+wordcloud(words = word_c_liv$word1, freq = word_c_liv$freq1, min.freq = 16,
+          random.order = T, colors=brewer.pal(8, "Dark2"), scale = c(1.2, 0.5),
+          rot.per = 0.2)
+
+# Dados faltando: Rondonia, Amapa e Roraima
